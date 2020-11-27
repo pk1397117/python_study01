@@ -18,7 +18,14 @@ print(dir([1]))
 quotient, remainder = divmod(15, 2)
 print(quotient, remainder)
 
-
 # exit(0)
 
 print(help(int))
+
+print(oct(40))
+
+print(hex(48))
+
+print(round(3.1415926, 3))
+
+sum([1, 2, 3])

@@ -1,7 +1,5 @@
-def calc(func, *args):
-    if args == ():
-        return func
-    return args[-1](func, args[0])
+def calc(a, b, fn):
+    return fn(a, b)
 
 
 def add(x, y):
@@ -21,20 +19,13 @@ def divide(x, y):
 
 
 # 回调函数
-x1 = calc(add(1, 2))
-print(x1)
-
-x2 = calc(subtract(1, 2))
-print(x2)
-
-x3 = calc(multiply(1, 2))
-print(x3)
-
-x4 = calc(divide(1, 2))
-print(x4)
-
+x1 = calc(2, 3, add)
+x2 = calc(2, 3, subtract)
+x3 = calc(2, 3, multiply)
+x4 = calc(2, 3, divide)
 x5 = calc(2, 3, lambda x, y: x + y)
 x6 = calc(2, 3, lambda x, y: x - y)
 x7 = calc(2, 3, lambda x, y: x * y)
 x8 = calc(2, 3, lambda x, y: x / y)
+print(x1, x2, x3, x4)
 print(x5, x6, x7, x8)
